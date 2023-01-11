@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import './App.scss';
+import useFetch from "./hooks/useFetch";
+import Discover from './pages/Discover/Discover'
 
-function App() {
+
+const Layout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      {/* <Top />
+      <Navbar /> */}
+      <Outlet />
+      {/* <Contact />
+      <Footer /> */}
+    </div>
+  )
+}
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Discover />
+      },
+
+    ]
+}
+])
+function App() {
+ 
+  return (
+    <div>
+      
+  <RouterProvider router={router} />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.icon-wrapper{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1ed760;
+    .player-icon {
+        width: 60px !important;
+        height: 60px  !important;
+        color: #000;
+        }
+}
