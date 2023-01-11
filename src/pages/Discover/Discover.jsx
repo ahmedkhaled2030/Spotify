@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import SongCard from "../../components/SongCard/SongCard";
 import { playPause, setActiveSong } from "../../redux/features/playerSlice";
 import { useDispatch, useSelector } from "react-redux";
+import MusicPlayer from '../../components/MusicPlayer/index'
 
 
 const Discover = () => {
@@ -38,6 +39,7 @@ const Discover = () => {
           />
         ))}
       </div>
+      <MusicPlayer />
     </div>
   );
 };

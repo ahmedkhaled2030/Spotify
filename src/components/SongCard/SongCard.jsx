@@ -6,8 +6,18 @@ import { playPause, setActiveSong } from "../../redux/features/playerSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const SongCard = ({ song, isPlaying, activeSong, data, i }) => {
-  const handlePlay = () => {};
-  const handlePause = () => {};
+  const dispatch = useDispatch();
+  const handlePlay = () => {
+    console.log(song)
+    console.log(data)
+ 
+    dispatch(setActiveSong({ song, data, i }))
+    dispatch(playPause(true))
+  };
+  const handlePause = () => {
+    console.log("handlePause")
+    dispatch(playPause(false))
+  };
 
   return (
     <div className="song-card">

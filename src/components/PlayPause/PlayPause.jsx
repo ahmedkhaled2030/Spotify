@@ -9,14 +9,14 @@ const PlayPause = ({
   handlePause,
   handlePlay,
 }) => {
-  return isPlaying && activeSong?.title ? (
+  return isPlaying && activeSong?.title === song.title ? (
     <div className="icon-wrapper">
-    <Pause className="player-icon" onClick={handlePlay} />
+    <Pause className="player-icon" onClick={handlePause} />
     </div>
 
   ) : (
       <div className="icon-wrapper">
-    <PlayArrow className="player-icon" onClick={handlePause} />
+    <PlayArrow className="player-icon" onClick={handlePlay} />
       </div>
 
   );
